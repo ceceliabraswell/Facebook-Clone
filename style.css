@@ -451,13 +451,18 @@ nav {
   position: absolute;
   width: 90%;
   max-width: 350px;
-  height: 500px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
   border-radius: 4px;
   overflow: hidden;
   top: 108%;
   right: 5%;
+  max-height: 0;
+  transition: max-height 0.3s;
+}
+
+.settings-menu-height {
+  max-height: 450px;
 }
 
 .user-profile a {
