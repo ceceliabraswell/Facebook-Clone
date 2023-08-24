@@ -5,15 +5,28 @@
   box-sizing: border-box;
 }
 
+:root { 
+  --body-color: #efefef;
+  --nav-color: #1876f2;
+  --bg-color: #fff;
+}
+
+.dark-theme {
+  --body-color: #0a0a0a;
+  --nav-color: #000;
+  --bg-color: #000;
+}
+
 body {
-  background: #efefef;
+  background: var(--body-color);
+  transition: background 0.3s;
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1876f2;
+  background: var(--nav-color);
   padding: 5px 5%;
   position: sticky;
   top: 0;
@@ -106,7 +119,7 @@ nav {
   position: sticky;
   top: 70px;
   align-self: flex-start;
-  background: #fff;
+  background: var(--bg-color);
   padding: 20px;
   border-radius: 4px;
   color: #626262;
@@ -161,12 +174,6 @@ nav {
 .right-sidebar h4 {
   font-weight: 600;
   font-size: 16px;
-}
-
-.sidebar-title a {
-  text-decoration: none;
-  color: #1876f2;
-  font-size: 12px;
 }
 
 .event {
@@ -305,7 +312,7 @@ nav {
 
 .write-post-container {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 6px;
   padding: 20px;
   color: #626262;
@@ -367,7 +374,7 @@ nav {
 
 .post-container {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 6px;
   padding: 20px;
   color: #626262;
@@ -451,8 +458,8 @@ nav {
   position: absolute;
   width: 90%;
   max-width: 350px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  background: var(--bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   overflow: hidden;
   top: 108%;
@@ -466,9 +473,13 @@ nav {
 }
 
 .user-profile a {
-  font-size: 12px;
+  font-size: 13px;
   color: #1876f2;
   text-decoration: none;
+}
+
+.user-profile p {
+  margin-bottom: 3px;
 }
 
 .settings-menu-inner {
@@ -500,4 +511,73 @@ nav {
   justify-content: space-between;
   text-decoration: none;
   color: #626262;
+}
+
+#dark-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ccc;
+  width: 45px;
+  border-radius: 15px;
+  padding: 2px 3px;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.5s, background 0.5s;
+}
+
+#dark-btn span {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#dark-btn.dark-btn-on {
+  padding-left: 23px;
+  background: #0a0a0a;
+}
+
+/* -------- profile page -------- */
+
+.profile-container {
+  padding: 20px 15%;
+  color: #626262;
+}
+
+.cover-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  height: 350px;
+}
+
+.profile-details {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.pd-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pd-image {
+  width: 100px;
+  margin-right: 20px;
+  border-radius: 6px;
+}
+
+.pd-row div h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.pd-row div p {
+  font-size: 13px;
 }
